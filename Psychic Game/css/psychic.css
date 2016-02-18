@@ -1,0 +1,44 @@
+.full {
+	background-image: url(../images/crystalball.jpg);
+	width: 500px;
+	height: 470px;
+	border-image: blue;
+	float: center;
+	margin-left: 450px;
+	margin-top: 45px;
+	border-style: double;
+	
+
+
+
+}
+
+h1 {
+	text-align: center;
+}
+
+h4 {
+	text-align: center;
+	font-size: 15;
+}
+
+	
+.jumbotron {
+	background-color: lightblue;
+	font-size: 20px;
+	
+}
+
+#button{
+	height: 200px;
+	width: 150px;
+	float: center;
+	margin-left: 500px;
+	margin-bottom: 200px;
+
+}
+body {
+	background: lightblue;
+	text color: white;
+}
+

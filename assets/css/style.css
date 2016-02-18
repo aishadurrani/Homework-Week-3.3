@@ -1,0 +1,28 @@
+*
+
+
+body {
+	background-image: url(../images/halloween.jpg);
+	text-align: center;
+	height: 100%;
+	text-decoration-style: black;
+	
+
+
+
+}
+
+.container {
+	background-color: black;
+
+
+
+}
+
+footer {
+	
+	text-align: center;
+	margin-top: 380px;
+	background-color: red;
+	
+}

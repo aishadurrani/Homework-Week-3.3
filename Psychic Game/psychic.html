@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="css/full.css" rel="stylesheet"> -->
+  <link rel="stylesheet" type="text/css" href="css/psychic.css">
+
+
+
+	<title>Psychic Game</title>
+
+
+</head>
+<body>
+
+<div class ="jumbotron">
+  <h1>The Psychic Game</h1>
+</div>
+<div class ="full">
+
+<div class = "container"></div>
+ <div id ="game">
+
+ <form id = "myGame">
+
+  
+    <h4>Press any key to start</h4> 
+
+
+    
+</form>
+
+ </div>
+ </div>
+
+
+   <script>
+
+
+   // Array that lists all the options
+      
+      var options = ['a' ,'b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','w','x','y','z'];
+      //Declares result at 0
+      var wins =0;
+      var losses =0;
+      var numGuesses = 8;
+      var guesses = "";
+      
+      //Captures key clicks
+     document.onkeyup = function(event){
+      //This determines which key is selected and makes it lower case
+      var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+      
+      //Code that will randomlychoose one of the options
+      var computerGuess = options[Math.floor(Math.random()*options.length)];
+
+      var resetButton = document.getElementById('reset');
+
+      resetButton.onclick = function(){
+        reset();
+      }
+      
+      //Reset Function;
+      function reset(){
+        location.reload(); 
+      }
+      
+      if(userGuess == computerGuess){
+           wins++ ;
+      } else {
+          
+          numGuesses--;
+          guesses += userGuess + " ";
+      if (numGuesses == 0){
+          losses++;
+          reset();
+
+
+           }
+      }  
+     
+        
+      
+      //Tallies and displays them in html
+      var html =  "<p>Guess what letter I am thinking of</p>" +
+     
+                "<p>wins: " + wins + "</p>" 
+                 +
+                "<p>losses: " + losses +  "</p>"
+                +
+              "<p>Guesses left: " + numGuesses + "</p>"
+                +
+                "<p>Your Guesses so far: " + guesses  + "</p>";
+
+
+
+              
+
+       
+        //Adding html into the game 
+        document.querySelector('#game').innerHTML = html;
+
+     
+    }
+
+     
+     
+
+     
+
+    </script>
+
+  <form>
+    <input type="button" id="reset" value="Reset Game">
+    </form>
+   
+  </body>
+  </html>
